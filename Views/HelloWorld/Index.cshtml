@@ -1,0 +1,30 @@
+@using MvcMovie.ViewModels
+@model MvcMovie.ViewModels.Address
+
+
+<h1>@ViewData["Title"] </h1>
+
+<h2>Index</h2>
+
+<p>Hello from our View Template!</p>
+
+<h2>Contact Model Tipado</h2>
+<address>
+    @Model.Street<br>
+    @Model.City, @Model.State @Model.PostalCode<br>
+    <abbr title="Phone">P:</abbr> 425.555.0100
+</address>
+
+
+@{
+    // Since Address isn't a string, it requires a cast.
+    var address = ViewData["Address"] as Address;
+}
+
+<h2>Contact  ViewData </h2>
+<address>
+    @address.Name<br>
+    @address.Street<br>
+    @address.City, @address.State @address.PostalCode
+</address>
+
